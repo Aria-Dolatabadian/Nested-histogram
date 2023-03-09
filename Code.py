@@ -2,6 +2,7 @@ from bokeh.palettes import Spectral5
 from bokeh.plotting import figure, show
 from bokeh.transform import factor_cmap
 import pandas as pd
+from bokeh.io import export_svg  #install selenium
 
 df = pd.read_csv("FileName.csv")
 
@@ -25,3 +26,4 @@ p.xaxis.major_label_orientation = 1.2
 p.outline_line_color = None
 
 show(p)
+export_svg(p, filename="plot.svg")
